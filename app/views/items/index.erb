@@ -1,0 +1,6 @@
+<ul>
+<% @items.each do |item| %>
+  <% @item = item %>
+  <%= erb :'items/show'%> <% #could also use {locals: {item: item}} %>
+<% end %>
+</ul>

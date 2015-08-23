@@ -1,6 +1,7 @@
 require 'rake'
 
 require ::File.expand_path('../config/environment', __FILE__)
+require ::File.expand_path('../config/database', __FILE__)
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize
 require 'active_support/core_ext'
@@ -87,13 +88,13 @@ namespace :db do
   desc "Create the database at #{DB_NAME} and at #{APP_NAME}_test"
   task :create do
     puts "Creating database #{DB_NAME} and #{APP_NAME}_test if it doesn't exist..."
-    exec("createdb #{DB_NAME} && createdb #{APP_NAME}_test")
+    exec("createdb #{DB_NAME}")
   end
 
   desc "Drop the database at #{DB_NAME} and #{APP_NAME}_test"
   task :drop do
     puts "Dropping database #{DB_NAME} and #{APP_NAME}_test..."
-    exec("dropdb #{DB_NAME} && dropdb #{APP_NAME}_test")
+    exec("dropdb #{DB_NAME}")
   end
 
   desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
@@ -123,9 +124,22 @@ namespace :db do
   end
 
   namespace :test do
+    task :all do
+      exec("dropdb #{APP_NAME}_test && createdb #{APP_NAME}_test && rake db:migrate RACK_ENV=test")
+    end
+    desc "Create test database"
+    task :create do
+      puts "Creating database #{APP_NAME}_test if it doesn't exist..."
+      exec("createdb #{APP_NAME}_test")
+    end
     desc "Migrate test database"
     task :prepare do
       system "rake db:migrate RACK_ENV=test"
+    end
+    desc "Drop test database"
+    task :drop do
+      puts "Dropping database #{APP_NAME}_test..."
+      exec("dropdb #{APP_NAME}_test")
     end
   end
 
