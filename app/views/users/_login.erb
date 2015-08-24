@@ -1,0 +1,27 @@
+<h1>Login</h1>
+
+<% if @login_form_error %>
+<div class="error"><%= @login_form_error %></div><br>
+<% end %>
+
+<form class="col s12" action="/login" method="post">
+  <div class="row">
+    <div class="input-field col s12">
+      <label for="login">Username</label><br>
+      <input name="login" type="text" class="validate" value="<%= @login %>">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <label for="password">Password</label><br>
+      <input name="password" type="password" class="validate" value="">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input class="button pure-button-primary" type="submit" name="action" value="Login"/>
+    </div>
+  </div>
+</form>

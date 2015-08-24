@@ -1,0 +1,39 @@
+<h1>Register</h1>
+
+<% if @register_form_error %>
+<div class="error"><%= @register_form_error %></div><br>
+<% end %>
+
+<form class="col" action="/register" method="post">
+    <div class="row">
+<% if @user.errors[:login].any? %>
+    <div class="error"><%= "Username " + @user.errors[:login].first %></div>
+<% end %>
+    <div class="input-field col">
+      <label for="login">Username</label><br>
+      <input name="login" type="text" class="validate" value="<%= @user.login %>"><br>
+    </div>
+  </div>
+    <div class="row">
+<% if @user.errors[:raw_password].any? %>
+    <div class="error"><%= "Password " + @user.errors[:raw_password].first %></div>
+<% end %>
+    <div class="input-field col">
+      <label for="password">Password</label><br>
+      <input name="password" type="text" class="validate" value=""><br>
+    </div>
+  </div>
+    <div class="row">
+<% if @user.errors[:password_confirmation].any? %>
+    <div class="error"><%= @user.errors[:password_confirmation].first %></div>
+<% end %>
+    <div class="input-field col">
+      <label for="password_confirmation">Confirmation</label><br>
+      <input name="password_confirmation" type="text" class="validate" value=""><br>
+    </div>
+  </div>
+
+  <div class="row">
+    <input class="button pure-button-primary" type="submit" name="action" value="Register"/>
+  </div>
+</form>

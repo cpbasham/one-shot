@@ -1,9 +1,68 @@
+body {
+  text-align: center;
+  background: #ddd;
+  width: 100%;
+  height: 1000px; }
+
+header {
+  top: 0;
+  height: 30px;
+  width: 100%;
+  background: #13552D;
+  text-align: right;
+  position: fixed; }
+  header a {
+    color: #ECE6C7;
+    text-decoration: none;
+    position: relative;
+    top: .4em;
+    margin-right: 1em; }
+
+.header-filler {
+  height: 30px;
+  margin-bottom: 10px; }
+
+.error {
+  color: #b22; }
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
+  border: 1px dotted black; }
+
 th {
-  text-align: left;
-}
+  text-align: left; }
+
+div.input-field {
+  margin-top: 10px;
+  margin-bottom: 1em; }
+
+input {
+  width: 75%; }
+
+.form-area {
+  margin-top: 2em;
+  background-color: #ECE6C7;
+  border: solid 5px #13552D; }
+  .form-area > h1, .form-area input {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto; }
+  .form-area > h1 {
+    overflow: scroll; }
+
+.button {
+  background-color: #13552D;
+  margin-bottom: 1em; }
+
+label {
+  color: #13552D; }
+
+ul {
+  list-style-type: none; }
+  ul.no-indent {
+    margin: 0;
+    padding: 0; }
+
+/*# sourceMappingURL=application.css.map */

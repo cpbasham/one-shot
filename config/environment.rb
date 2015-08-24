@@ -18,9 +18,11 @@ require 'json'
 require 'sinatra'
 require "sinatra/reloader" if development?
 require "sinatra/activerecord"
+require 'sinatra/flash'
 
 require 'pg'
 
+require 'bcrypt'
 
 require 'erb'
 
@@ -34,3 +36,6 @@ API_KEY = "2d50144d-53c5-4e2f-94a3-07f8b425580f"
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+
+
+require APP_ROOT.join('config', 'database')
