@@ -16,6 +16,30 @@ Setup Sinatra application that can query League API for item data.
 
 
 
+item_sets:
+  set_name
+  user_id (belongs_to a User)
+  champion
+  map
+  game_type
+
+categories_sets: (join table)
+  set_id
+  category_id
+
+item_categories:
+  name
+
+categories_items: (join table)
+  category_id
+  item_id
+
+items:
+  id
+
+
+
+
 
 
 

@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   # users.password_hash in the database is a :string
   include BCrypt
 
+  has_many :item_sets
+
   validates :login, presence: true, allow_blank: false, uniqueness: true
   validates_format_of :login,
     { with: /[a-zA-Z0-9]+/, message: "can only contain letters and numbers" }

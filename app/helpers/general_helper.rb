@@ -30,10 +30,15 @@ end
 
 #ITEMS
 ITEM_IMAGE_LINK = IMAGE_LINK + "/item"
+# def get_items
+#   url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
+#   data = get(url)
+#   data["data"].map {|key, value| value}
+# end
+
 def get_items
-  url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
-  data = get(url)
-  data["data"].map {|key, value| value}
+  data = File.open("test-files/items.json").read
+  data = JSON.parse(data)
 end
 
 def get_item(name)
