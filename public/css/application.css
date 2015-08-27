@@ -64,5 +64,8 @@ ul {
   ul.no-indent {
     margin: 0;
     padding: 0; }
+  ul.s64 li {
+    height: 64px;
+    width: 64px; }
 
 /*# sourceMappingURL=application.css.map */

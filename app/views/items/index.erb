@@ -1,6 +1,9 @@
 <ul class="no-indent">
 <% @items.each do |item| %>
-  <% @item = item %>
-  <%= erb :'items/show'%> <% #could also use {locals: {item: item}} %>
+  <li>
+    <% @item = item %>
+    <%= erb :'items/show' %>
+  </li>
+  <br>
 <% end %>
 </ul>

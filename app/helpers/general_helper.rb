@@ -1,5 +1,6 @@
 API_UL_HEAD = "https://global.api.pvp.net"
 IMAGE_LINK = "http://ddragon.leagueoflegends.com/cdn/5.2.1/img"
+SPRITE_LINK = "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/sprite"
 
 #GENERAL
 ALPHANUMERIC = [*"0".."9"] + [*"A".."Z"]
@@ -30,21 +31,29 @@ end
 
 #ITEMS
 ITEM_IMAGE_LINK = IMAGE_LINK + "/item"
-# def get_items
-#   url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
-#   data = get(url)
-#   data["data"].map {|key, value| value}
-# end
-
 def get_items
-  data = File.open("test-files/items.json").read
-  data = JSON.parse(data)
+  if ONLINE
+    url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
+    data = get(url)
+  else
+    data = File.open("test-files/items.json").read
+    data = JSON.parse(data)
+  end
+  format_items(data)
 end
 
-def get_item(name)
-  item = items.find {|item| normalized_match?(name, item["name"])}
-  url = full_url("/api/lol/static-data/na/v1.2/item" + "/#{item["id"]}")
-  data = get(url)
+def format_items(data)
+  data = data["data"].map {|key, value| value}
+  data.sort! { |a, b| a["name"] <=> b["name"] }
+end
+
+def get_item(id)
+  if ONLINE
+    url = full_url("/api/lol/static-data/na/v1.2/item/#{id}", "itemData=all")
+    data = get(url)
+  else
+    get_items.find{|item| item["id"].to_s == id}
+  end
 end
 
 

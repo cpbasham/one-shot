@@ -1,20 +1,41 @@
+# ONLINE = true
+ONLINE = false
+
+get '/items/json' do
+  @items = get_items()
+  @items.to_s
+end
+
+
+
+
 get '/' do
   redirect '/items'
 end
 
 get '/items' do
   @items = get_items
-  @items.sort! { |a, b| a["name"] <=> b["name"] }
-  @items.each do |item|
-    image_url = "#{ITEM_IMAGE_LINK}/#{item["image"]["full"]}"
-    open("test-files/item-images/#{item["image"]["full"]}", 'wb') do |file|
-      file << open(image_url).read
-    end
-  end
-  "Finished!"
-  # erb :'items/index'
+  erb :'items/index'
 end
 
+get '/items/:id' do
+  @item = get_item(params[:id])
+  erb :'items/show'
+end
+
+get '/images/items' do
+  @items = get_items()
+  erb :'images/items/index'
+end
+
+get '/images/items/:id' do
+  @item = get_item(params[:id])
+  erb :'images/items/show'
+end
+
+get '/item_sets' do
+  erb :'item_sets/show'
+end
 
 
 

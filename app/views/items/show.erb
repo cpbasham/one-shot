@@ -1,10 +1,7 @@
-<li>
-  <img src='<%= "#{ITEM_IMAGE_LINK}/#{@item["image"]["full"]}" %>'><br>
-  <strong><%= "#{@item["name"]}" %></strong><br>
-  <img src='/img/gold.png'> <%= "#{@item["gold"]["total"]}" %><br>
-  <%= "#{@item["description"]}" %><br>
-</li>
-<br>
+<%= erb :'images/items/show' %><br>
+<strong><%= "#{@item["name"]}" %></strong><br>
+<img src='/img/gold.png'><%= "#{@item["gold"]["total"]}" %><br>
+<%= "#{@item["description"]}" %><br>
 
 
 

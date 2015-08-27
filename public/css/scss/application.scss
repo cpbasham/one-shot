@@ -84,4 +84,8 @@ ul {
   &.no-indent {
     margin: 0; padding: 0;
   }
+  &.s64 li {
+    height: 64px;
+    width: 64px;
+  }
 }
