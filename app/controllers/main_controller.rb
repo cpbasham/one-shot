@@ -1,9 +1,5 @@
-ONLINE = true
-# ONLINE = false
-
 get '/items/json/?' do
   @items = get_items()
-  # @items.to_s
   @items.join("<br><br>" + "-"*237 + "<br><br>")
 end
 
@@ -11,7 +7,7 @@ end
 
 
 get '/' do
-  redirect '/items'
+  hour = Time.now.to_i / 3600
 end
 
 get '/items/?' do

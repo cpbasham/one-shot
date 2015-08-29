@@ -29,16 +29,16 @@ def get(url)
 end
 
 
+#REALM DATA
+def get_realm_data
+
+
+
 #ITEMS
 ITEM_IMAGE_LINK = IMAGE_LINK + "/item"
 def get_items
-  if ONLINE
-    url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
-    data = get(url)
-  else
-    data = File.open("test-files/items.json").read
-    data = JSON.parse(data)
-  end
+  url = full_url("/api/lol/static-data/na/v1.2/item", "itemListData=all")
+  data = get(url)
   format_items(data)
 end
 
@@ -48,12 +48,8 @@ def format_items(data)
 end
 
 def get_item(id)
-  if ONLINE
-    url = full_url("/api/lol/static-data/na/v1.2/item/#{id}", "itemData=all")
-    data = get(url)
-  else
-    get_items.find{|item| item["id"].to_s == id}
-  end
+  url = full_url("/api/lol/static-data/na/v1.2/item/#{id}", "itemData=all")
+  data = get(url)
 end
 
 
