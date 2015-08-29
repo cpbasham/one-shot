@@ -64,8 +64,43 @@ ul {
   ul.no-indent {
     margin: 0;
     padding: 0; }
-  ul.s64 li {
-    height: 64px;
-    width: 64px; }
+  ul li {
+    height: 48px; }
+
+.online-sprite-item0 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/sprite/item0.png"); }
+
+.online-sprite-item1 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/sprite/item1.png"); }
+
+.online-sprite-item2 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/sprite/item2.png"); }
+
+.offline-sprite-item0 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("/img/test/item0.png"); }
+
+.offline-sprite-item1 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("/img/test/item1.png"); }
+
+.offline-sprite-item2 {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url("/img/test/item2.png"); }
 
 /*# sourceMappingURL=application.css.map */

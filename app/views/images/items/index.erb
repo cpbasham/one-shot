@@ -1,10 +1,12 @@
 <ul class="pure-g s64 no-indent">
-  <% @items.each do |item| %>
-    <% next if !item["gold"]["purchasable"] %>
+  <%
+  items.each do |item|
+    next if !item["gold"]["purchasable"]
+  %>
     <li>
-      <% @item = item %>
-      <% @cls = "" %>
-      <%= erb :'images/items/show' %>
+      <%=
+      erb :'images/items/show', locals: {item: item}
+      %>
     </li>
     <br>
   <% end %>

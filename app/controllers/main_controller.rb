@@ -1,9 +1,10 @@
-# ONLINE = true
-ONLINE = false
+ONLINE = true
+# ONLINE = false
 
-get '/items/json' do
+get '/items/json/?' do
   @items = get_items()
-  @items.to_s
+  # @items.to_s
+  @items.join("<br><br>" + "-"*237 + "<br><br>")
 end
 
 
@@ -13,32 +14,29 @@ get '/' do
   redirect '/items'
 end
 
-get '/items' do
-  @items = get_items
-  erb :'items/index'
+get '/items/?' do
+  erb :'items/index', locals: {items: get_items}
 end
 
-get '/items/:id' do
+get '/items/:id/?' do
+  erb :'items/show', locals: {item: get_item(params[:id])}
+end
+
+get '/images/items/?' do
+  erb :'images/items/index', locals: {items: get_items}
+end
+
+get '/images/items/:id/?' do
   @item = get_item(params[:id])
-  erb :'items/show'
+  erb :'images/items/show', locals: {item: get_item(params[:id])}
 end
 
-get '/images/items' do
-  @items = get_items()
-  erb :'images/items/index'
-end
-
-get '/images/items/:id' do
-  @item = get_item(params[:id])
-  erb :'images/items/show'
-end
-
-get '/item_sets' do
+get '/item_sets/?' do
   erb :'item_sets/show'
 end
 
 
 
-get '/champions' do
+get '/champions/?' do
   @champions = APICommunicator.items
 end

@@ -1,7 +1,9 @@
 <div class="page pure-g">
-  <div class="item-set pure-u-2-5" style="background-color: red;"></div>
+  <div class="item-set pure-u-2-5" style="background-color: red;">
+    <img src="/img/gold2.png" class="item-img">
+  </div>
   <div class="item-set pure-u-1-5" style="background-color: black;"></div>
-  <div class="item-set pure-u-2-5" style="background-color: blue;">
-    <%= @items = get_items; erb :'images/items/index' %>
+  <div class="item-set pure-u-2-5" style="background-color: black;">
+    <%= erb :'images/items/index', locals: {items: get_items} %>
   </div>
 </div>

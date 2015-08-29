@@ -1,12 +1,17 @@
-<% if ONLINE %>
-  <!--<% url = "#{ITEM_IMAGE_LINK}/#{@item["image"]["full"]}" %>-->
-  <%
-  url = "#{SPRITE_LINK}/#{@item["image"]["sprite"]}"
-  image = @item["image"]
-  x, y, w, h = image["x"], image["y"], image["w"], image["h"]
-  %>
-  <img src='/img/gold.png' style=<%="'width:#{w};height:#{h};background: url(#{url}) #{x} #{y};'"%>>
-<% else %>
-  <% url = "/img/test/#{@item["image"]["full"]}" %>
-  <img src='<%= "#{url}" %>' class='<%= "#{@cls}" %>' width="64" height="64" />
-<% end %>
+<%=
+  image = item["image"]
+  sprite = "#{image["sprite"]}"[0..-5]
+  title = "title='#{item["name"]}'"
+  cls = "class='" + (ONLINE ? "online" : "offline") + "-sprite-#{sprite}'"
+  case (sprite[-1])
+  when "0"
+    bgpos = "style='background-position: #{(10 * 48) - image["x"]}px #{image["y"]}px'"
+  when "1"
+    bgpos = "style='background-position: #{(10 * 48) - image["x"]}px #{image["y"]}px'"
+  when "2"
+    bgpos = "style='background-position: #{(9 * 48) - image["x"]}px #{image["y"] - 48}px'"
+  end
+  "<span #{title} #{cls} #{bgpos}></span>"
+%>
+<% image["x"].to_s + "px " + image["y"].to_s + "px" %>
+<% item %>

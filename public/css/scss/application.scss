@@ -84,8 +84,46 @@ ul {
   &.no-indent {
     margin: 0; padding: 0;
   }
-  &.s64 li {
-    height: 64px;
-    width: 64px;
+  & li {
+    height: 48px;
   }
+}
+
+@mixin sprite($url) {
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  background-image: url($url);
+}
+
+@mixin offline-sprite($suffix) {
+  @include sprite("/img/test/" + $suffix);
+}
+
+@mixin online-sprite($suffix) {
+  @include sprite("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/sprite/" + $suffix);
+}
+
+.online-sprite-item0 {
+  @include online-sprite("item0.png");
+}
+
+.online-sprite-item1 {
+  @include online-sprite("item1.png");
+}
+
+.online-sprite-item2 {
+  @include online-sprite("item2.png");
+}
+
+.offline-sprite-item0 {
+  @include offline-sprite("item0.png");
+}
+
+.offline-sprite-item1 {
+  @include offline-sprite("item1.png");
+}
+
+.offline-sprite-item2 {
+  @include offline-sprite("item2.png");
 }

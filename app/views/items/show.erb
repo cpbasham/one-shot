@@ -1,14 +1,14 @@
-<%= erb :'images/items/show' %><br>
-<strong><%= "#{@item["name"]}" %></strong><br>
-<img src='/img/gold.png'><%= "#{@item["gold"]["total"]}" %><br>
-<%= "#{@item["description"]}" %><br>
+<%= erb :'images/items/show', locals: {item: item} %><br>
+<strong><%= "#{item["name"]}" %></strong><br>
+<img src='/img/gold.png'><%= "#{item["gold"]["total"]}" %><br>
+<%= "#{item["description"]}" %><br>
 
 
 
 
 <!--
-  <% "#{@item["id"]} – #{@item["name"]}" %><br>
-  <% "#{@item["description"]}" %><br>
-  <em><% "#{@item["plaintext"]}" %></em><br><br>
-  <%= "#{@item}" %>
+  <% "#{item["id"]} – #{item["name"]}" %><br>
+  <% "#{item["description"]}" %><br>
+  <em><% "#{item["plaintext"]}" %></em><br><br>
+  <%= "#{item}" %>
 -->
