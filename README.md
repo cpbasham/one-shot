@@ -2,7 +2,7 @@
 
 
 GOALS
-Ask user for set name, map, game type
+Ask user for map, game type, set name
 
 
 

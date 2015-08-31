@@ -1,13 +1,15 @@
+before do
+  __setup_extra_getters
+end
+
 get '/items/json/?' do
   @items = get_items()
   @items.join("<br><br>" + "-"*237 + "<br><br>")
 end
 
-
-
-
-get '/' do
-  hour = Time.now.to_i / 3600
+get '/?' do
+  @single_page = true
+  erb :'single_page/main'
 end
 
 get '/items/?' do

@@ -1,0 +1,11 @@
+<%=
+  image = item["image"]
+  sprite = "#{image["sprite"]}"[0..-5]
+  title = "title=\"#{item["name"]}\""
+  cls = "class='sprite'"
+
+  bgimg = "background-image: url(#{item_sprite_head}/#{image["sprite"]})"
+  bgpos = "background-position: #{-image["x"]}px #{-image["y"]}px"
+  style = "style=\"#{bgpos}; #{bgimg}\""
+  "<span #{title} #{cls} #{style}></span>"
+%>

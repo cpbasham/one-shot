@@ -1,11 +1,16 @@
 <div class="header-filler"></div>
 
 <header>
-  <% if auth_logged_in? %>
-    <a href="/items">Items</a>
-    <a href="/profile">Profile</a>
-    <a href="/logout">Logout</a>
-  <% else %>
-    <a href="/login">Login/Register</a>
-  <% end %>
+  <div class="header-left">
+    <h1>OneShot</h1>
+  </div>
+  <div class="header-right">
+    <% if auth_logged_in? %>
+      <a href="/items">Items</a>
+      <a href="/profile">Profile</a>
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login/Register</a>
+    <% end %>
+  </div>
 </header>

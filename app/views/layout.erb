@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="/css/normalize.css">
-  <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
   <link rel="stylesheet" href="/css/pure-release-0.6.0/pure-min.css">
   <link rel="stylesheet" href="/css/application.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-  <!-- <script src="/js/application.js"></script> -->
+  <% if @single_page %>
+    <script src="<%= jquery_url %>"></script>
+    <script src="<%= jquery_ui_url %>"></script>
+    <script src="/js/application.js"></script>
+  <% end %>
 
   <title>One Shot</title>
 </head>
