@@ -4,8 +4,9 @@
   title = "title=\"#{item["name"]}\""
   cls = "class='sprite'"
 
+  data = "data-type='item' data-id='#{item["id"]}'"
   bgimg = "background-image: url(#{item_sprite_head}/#{image["sprite"]})"
   bgpos = "background-position: #{-image["x"]-1}px #{-image["y"]}px"
   style = "style=\"#{bgpos}; #{bgimg}\""
-  "<span #{title} #{cls} #{style}></span>"
+  "<span #{data} #{title} #{cls} #{style}></span>"
 %>

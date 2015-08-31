@@ -4,17 +4,24 @@ div.items {
   border: 1px solid black;
   // border-radius: 25px;
   // padding: 25px 0;
+  text-align: center;
   background-color: $secondary-color;
 
+  &>input {
+    margin: 1.5% 0;
+    width: 100%;
+  }
+
   & ul.images {
-    height: 450px;
+    max-height: 450px;
     overflow: scroll;
 
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    margin: auto;
+    margin: 0;
     justify-content: center;
+    align-items: flex-start;
 
     & li {
       display: inline-flex;

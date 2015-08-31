@@ -2,6 +2,7 @@ $header-height: 2em;
 $primary-color: #ECE6C7;
 $secondary-color: #13552D;
 $modifiers-bar-height: 2em;
+$input-height: $modifiers-bar-height;
 
 * {
   outline: none;
@@ -29,8 +30,16 @@ body {
 
 input {
   border: none;
+  height: $input-height;
+  width: 75%;
+  margin: 0 auto;
   text-align: center;
-  width: 75%
+
+  background-color: lighten($secondary-color, 5%);
+  color: $primary-color;
+  padding: 0;
+  font-weight: bold;
+  text-align: center;
 }
 
 th {

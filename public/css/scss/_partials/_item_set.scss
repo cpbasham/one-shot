@@ -11,7 +11,7 @@ div.item-set {
   }
 
   & input.item-set-name {
-    height: $modifiers-bar-height;
+    height: $input-height;
     width: 100%;
     background-color: lighten($secondary-color, 5%);
     color: $primary-color;

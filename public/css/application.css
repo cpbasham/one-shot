@@ -19,8 +19,15 @@ body {
 
 input {
   border: none;
+  height: 2em;
+  width: 75%;
+  margin: 0 auto;
   text-align: center;
-  width: 75%; }
+  background-color: #186a38;
+  color: #ECE6C7;
+  padding: 0;
+  font-weight: bold;
+  text-align: center; }
 
 th {
   text-align: left; }
@@ -133,15 +140,20 @@ div.items {
   height: 500px;
   margin: 0 5%;
   border: 1px solid black;
+  text-align: center;
   background-color: #13552D; }
+  div.items > input {
+    margin: 1.5% 0;
+    width: 100%; }
   div.items ul.images {
-    height: 450px;
+    max-height: 450px;
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    margin: auto;
-    justify-content: center; }
+    margin: 0;
+    justify-content: center;
+    align-items: flex-start; }
     div.items ul.images li {
       display: inline-flex;
       width: 46px;
