@@ -1,0 +1,31 @@
+div.items {
+  height: 500px;
+  margin: 0 5%;
+  border: 1px solid black;
+  // border-radius: 25px;
+  // padding: 25px 0;
+  background-color: $secondary-color;
+
+  & ul.images {
+    height: 450px;
+    overflow: scroll;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: auto;
+    justify-content: center;
+
+    & li {
+      display: inline-flex;
+      width: 46px;
+      height: 46px;
+
+      & .sprite {
+        display: inherit;
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
+}

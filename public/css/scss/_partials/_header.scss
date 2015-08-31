@@ -1,0 +1,35 @@
+header {
+  top: 0;
+  height: $header-height;
+  width: 100%;
+  background: $secondary-color;
+  line-height: $header-height;
+  position: fixed;
+  z-index: 1;
+  & div {
+    position: relative;
+    &.header-left {
+      float: left;
+      margin-left: 0.25em;
+    }
+    &.header-right {
+      float: right;
+      margin-right: 1em;
+    }
+  }
+  & a {
+    color: $primary-color;
+  }
+  & h1 {
+    position: relative;
+    margin: 0;
+    top: 0.025em;
+    font-size: 1.5em;
+    color: $primary-color;
+  }
+}
+
+.header-filler {
+  position: relative;
+  height: $header-height;
+}

@@ -1,0 +1,39 @@
+div.item-set {
+  margin: 0 5%;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 25px 0;
+  background-color: $secondary-color;
+
+  & div.new-row {
+    text-align: center;
+    line-height: 3em;
+  }
+
+  & input.item-set-name {
+    height: $modifiers-bar-height;
+    width: 100%;
+    background-color: lighten($secondary-color, 5%);
+    color: $primary-color;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+    &::-webkit-input-placeholder {
+      color: $primary-color;
+      opacity: 0.3;
+    }
+    &:-moz-placeholder {
+      color: $primary-color;
+      opacity: 0.3;
+    }
+    &::-moz-placeholder {
+      color: $primary-color;
+      opacity: 0.3;
+    }
+    &:-ms-input-placeholder {
+      color: $primary-color;
+      opacity: 0.3;
+    }
+  }
+
+}

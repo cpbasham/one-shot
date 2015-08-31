@@ -9,7 +9,7 @@ end
 
 get '/?' do
   @single_page = true
-  erb :'single_page/main'
+  erb :'main'
 end
 
 get '/items/?' do

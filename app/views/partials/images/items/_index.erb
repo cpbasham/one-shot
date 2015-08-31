@@ -1,13 +1,12 @@
-<ul class="pure-g images no-indent">
+<ul class="images">
   <%
   items.each do |item|
     # next if !item["gold"]["purchasable"]
   %>
     <li>
       <%=
-      erb :'multi_page/images/items/show', locals: {item: item}
+      erb :'partials/images/items/_show', locals: {item: item}
       %>
     </li>
-    <!-- <br> -->
   <% end %>
 </ul>
