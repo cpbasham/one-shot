@@ -4,6 +4,7 @@ div.item-set-container {
   border-radius: 25px;
   padding: 25px 0;
   background-color: $secondary-color;
+  max-height: inherit;
 
   & div.item-set-row {
     text-align: center;
@@ -18,24 +19,26 @@ div.item-set-container {
 
   div.item-set-row-container {
     border-radius: 10px;
-    margin: 5px auto 5px auto;
+    margin: 10px auto 20px auto;
+    display: block;
+    & div.row-items {
+      height: 92px;
+    }
     & ul {
-      width: inherit;
-      height: inherit;
-      padding: 0;
+      width: 100%;
+      height: 92px;
       margin: 0;
+      padding: 0;
 
-      max-height: 2em;
       overflow-y: scroll;
       &::-webkit-scrollbar { width: 0 !important }
       -ms-overflow-style: none;
 
+
       display: flex;
       flex-wrap: wrap;
-      padding: 0;
-      margin: 10px 5px 0 5px;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
 
       & li {
         display: inline-flex;
