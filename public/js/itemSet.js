@@ -6,13 +6,13 @@ $("div.item-set-container").on("selectstart dragstart", "div.new-row, div.item-s
 
 $("div.item-set-container").on("click", "div.new-row", function(evt) {
   evt.preventDefault();
-  var target = $(evt.target);
+  var target = $(evt.target).prev();
   $.ajax({
     url: "item_sets/new",
     method: "GET",
     dataType: "html"
   }).done(function(data) {
-    var newRow = $(data).insertBefore(target);
+    var newRow = $(data).appendTo(target);
     newRow.find("ul").droppable({
       drop: function( e, ui ) {
         e.preventDefault();

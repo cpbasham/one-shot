@@ -13,6 +13,7 @@ function specifyItemsByMap(map, searchVal) {
   if (map === "any") {
     var images = $("div.items ul.images li span.sprite");
     images.data("purchasable", "true");
+    searchForItem(searchVal);
   } else {
     $.ajax({
       url: "items",
@@ -36,8 +37,10 @@ $("div.menu-bar.item-set-modifiers").on("click", "li:not(:first-child)", functio
   if (target.is(".unviable")) {
     e.stopPropagation();
   } else {
-    var val = $("input#item-search").val();
-    specifyItemsByMap($(e.target).data("map"), val);
+    if (target.is($("ul.map-selector").children())) {
+      var val = $("input#item-search").val();
+      specifyItemsByMap($(e.target).data("map"), val);
+    }
     bringToTop(target);
   }
 });
