@@ -1,6 +1,5 @@
 var itemDiv = $("div.items");
-var itemSearch = itemDiv.find("#item-search")
-;
+var itemSearch = itemDiv.find("#item-search");
 var images = itemDiv.find("ul.images li span")
 itemSearch.on("input", function(e) {
   var pattern = new RegExp(escapeRegExp(e.target.value));
@@ -19,3 +18,5 @@ itemSearch.on("input", function(e) {
 function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
+
+images.draggable({helper: 'clone'});

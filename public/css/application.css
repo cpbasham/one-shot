@@ -18,6 +18,7 @@ body {
   border: 1px dotted black; }
 
 input {
+  display: block;
   border: none;
   height: 2em;
   width: 75%;
@@ -107,25 +108,29 @@ header {
       color: #ECE6C7;
       opacity: 0.3; }
   .menu-bar.item-set-modifiers ul {
-    height: 2em; }
+    height: 2em;
+    border-top: 1px solid black; }
   .menu-bar.item-set-modifiers ul li {
     height: 2em;
     line-height: 2em;
     width: 100%;
+    border: 1px solid black;
+    border-top: none;
+    border-collapse: collapse;
     display: none;
     text-align: center;
     color: #ECE6C7;
     background-color: #13552D;
-    cursor: default;
-    overflow: scroll; }
+    cursor: default; }
     .menu-bar.item-set-modifiers ul li:first-child {
       display: list-item;
       background-color: #114d29; }
     .menu-bar.item-set-modifiers ul li:hover {
       background-color: #0e4022; }
     .menu-bar.item-set-modifiers ul li.unviable {
-      background-color: #ECE6C7;
-      color: #13552D; }
+      background-color: #dfd5a1;
+      color: red;
+      font-style: italic; }
 
 div.menu-bar.champion-select {
   text-align: center;
@@ -138,22 +143,26 @@ div.menu-bar.champion-select {
 
 div.items {
   height: 500px;
+  border-radius: 25px;
+  padding: 25px 0;
   margin: 0 5%;
   border: 1px solid black;
   text-align: center;
   background-color: #13552D; }
   div.items > input {
-    margin: 1.5% 0;
     width: 100%; }
   div.items ul.images {
-    max-height: 450px;
-    overflow: scroll;
+    max-height: 460px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    margin: 0;
+    margin: 10px 5px 0 5px;
     justify-content: center;
     align-items: flex-start; }
+    div.items ul.images::-webkit-scrollbar {
+      width: 0 !important; }
     div.items ul.images li {
       display: inline-flex;
       width: 46px;
@@ -163,34 +172,76 @@ div.items {
         width: 46px;
         height: 46px; }
 
-div.item-set {
+div.item-set-container {
   margin: 0 5%;
   border: 1px solid black;
   border-radius: 25px;
   padding: 25px 0;
   background-color: #13552D; }
-  div.item-set div.new-row {
+  div.item-set-container div.item-set-row {
+    text-align: center; }
+    div.item-set-container div.item-set-row.new-row {
+      line-height: 3em;
+      margin-bottom: 0;
+      cursor: default;
+      background-color: #13557D; }
+  div.item-set-container div.item-set-row-container {
+    border-radius: 10px;
+    margin: 5px auto 5px auto; }
+    div.item-set-container div.item-set-row-container ul {
+      width: inherit;
+      height: inherit;
+      padding: 0;
+      margin: 0;
+      max-height: 2em;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 10px 5px 0 5px;
+      justify-content: center;
+      align-items: flex-start; }
+      div.item-set-container div.item-set-row-container ul::-webkit-scrollbar {
+        width: 0 !important; }
+      div.item-set-container div.item-set-row-container ul li {
+        display: inline-flex;
+        width: 46px;
+        height: 46px; }
+        div.item-set-container div.item-set-row-container ul li .sprite {
+          display: inherit;
+          width: 46px;
+          height: 46px; }
+  div.item-set-container div.item-set-row-delete {
+    margin-top: .3%;
+    margin-left: .6%;
+    position: absolute;
+    width: 1.1em;
     text-align: center;
-    line-height: 3em; }
-  div.item-set input.item-set-name {
+    font-weight: bold;
+    cursor: default;
+    background-color: red;
+    color: white; }
+  div.item-set-container input.row-name, div.item-set-container input.row-name + div {
+    margin: 0 auto 0 auto;
+    width: 90%;
+    border: 1px solid black; }
+  div.item-set-container input.row-name {
     height: 2em;
+    border-radius: 10px 10px 0 0; }
+  div.item-set-container input.row-name + div {
+    height: 69px;
+    border-top: none;
+    border-radius: 0 0 10px 10px; }
+  div.item-set-container input.item-set-name {
+    line-height: 3em;
+    height: 3em;
     width: 100%;
+    margin: 0;
     background-color: #186a38;
     color: #ECE6C7;
     padding: 0;
     font-weight: bold;
     text-align: center; }
-    div.item-set input.item-set-name::-webkit-input-placeholder {
-      color: #ECE6C7;
-      opacity: 0.3; }
-    div.item-set input.item-set-name:-moz-placeholder {
-      color: #ECE6C7;
-      opacity: 0.3; }
-    div.item-set input.item-set-name::-moz-placeholder {
-      color: #ECE6C7;
-      opacity: 0.3; }
-    div.item-set input.item-set-name:-ms-input-placeholder {
-      color: #ECE6C7;
-      opacity: 0.3; }
 
 /*# sourceMappingURL=application.css.map */

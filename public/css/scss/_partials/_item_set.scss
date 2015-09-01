@@ -1,39 +1,93 @@
-div.item-set {
+div.item-set-container {
   margin: 0 5%;
   border: 1px solid black;
   border-radius: 25px;
   padding: 25px 0;
   background-color: $secondary-color;
 
-  & div.new-row {
+  & div.item-set-row {
     text-align: center;
-    line-height: 3em;
+    // background-color: lighten($secondary-color, 5%);
+    &.new-row {
+      line-height: 3em;
+      margin-bottom: 0;
+      cursor: default;
+      background-color: #13557D;
+    }
   }
 
-  & input.item-set-name {
-    height: $input-height;
-    width: 100%;
-    background-color: lighten($secondary-color, 5%);
-    color: $primary-color;
-    padding: 0;
+  div.item-set-row-container {
+    border-radius: 10px;
+    margin: 5px auto 5px auto;
+    & ul {
+      width: inherit;
+      height: inherit;
+      padding: 0;
+      margin: 0;
+
+      max-height: 2em;
+      overflow-y: scroll;
+      &::-webkit-scrollbar { width: 0 !important }
+      -ms-overflow-style: none;
+
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 10px 5px 0 5px;
+      justify-content: center;
+      align-items: flex-start;
+
+      & li {
+        display: inline-flex;
+        width: $item-size;
+        height: $item-size;
+
+        & .sprite {
+          display: inherit;
+          width: $item-size;
+          height: $item-size;
+        }
+      }
+    }
+  }
+
+  & div.item-set-row-delete {
+    margin-top: .3%;
+    margin-left: .6%;
+    position: absolute;
+    width: 1.1em;
+    text-align: center;
     font-weight: bold;
-    text-align: center;
-    &::-webkit-input-placeholder {
-      color: $primary-color;
-      opacity: 0.3;
-    }
-    &:-moz-placeholder {
-      color: $primary-color;
-      opacity: 0.3;
-    }
-    &::-moz-placeholder {
-      color: $primary-color;
-      opacity: 0.3;
-    }
-    &:-ms-input-placeholder {
-      color: $primary-color;
-      opacity: 0.3;
-    }
+    cursor: default;
+    background-color: red;
+    color: white;
   }
 
+  & input {
+    &.row-name, &.row-name+div {
+      margin: 0 auto 0 auto;
+      width: 90%;
+      border: 1px solid black;
+    }
+    &.row-name {
+      height: $input-height;
+      border-radius: 10px 10px 0 0;
+    }
+    &.row-name+div {
+      height: $item-size * 1.5;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+    }
+    &.item-set-name {
+      line-height: $input-height+1;
+      height: $input-height+1;
+      width: 100%;
+      margin: 0;
+      background-color: lighten($secondary-color, 5%);
+      color: $primary-color;
+      padding: 0;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
 }

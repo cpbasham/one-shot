@@ -12,6 +12,18 @@ get '/?' do
   erb :'main'
 end
 
+get '/item_sets/new' do
+  if request.xhr?
+    erb :'partials/_item_set', layout: false
+  else
+    redirect '/'
+  end
+end
+
+
+
+
+
 get '/items/?' do
   erb :'items/index', locals: {items: get_items}
 end

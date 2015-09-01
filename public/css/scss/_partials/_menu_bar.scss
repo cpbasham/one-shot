@@ -43,19 +43,22 @@
   }
   & ul {
     height: $modifiers-bar-height;
+    border-top: 1px solid black;
   }
   & ul li {
     height: $modifiers-bar-height;
     line-height: $modifiers-bar-height;
     width: 100%;
     // float: left;
+    border: 1px solid black;
+    border-top: none;
+    border-collapse: collapse;
     display: none;
     text-align: center;
     color: $primary-color;
     background-color: $secondary-color;
     // margin-bottom: 0;
     cursor: default;
-    overflow: scroll;
     &:first-child {
       display: list-item;
       background-color: darken($secondary-color, 2%);
@@ -64,8 +67,10 @@
       background-color: darken($secondary-color, 5%);
     }
     &.unviable {
-      background-color: $primary-color;
-      color: $secondary-color;
+      background-color: darken($primary-color, 10%);
+      // color: $secondary-color;
+      color: red;
+      font-style: italic;
     }
   }
 }

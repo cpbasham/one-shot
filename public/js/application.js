@@ -9,3 +9,13 @@
 //     champSelector.attr("placeholder", "Champion");
 //   });
 //------------------------------------------------------
+
+var inputPlaceholder;
+$("body").on("focus", "input", function(e) {
+  var target = $(e.target);
+  inputPlaceholder = target.attr("placeholder");
+  $(e.target).attr("placeholder", "");
+});
+$("body").on("blur", "input", function(e) {
+  $(e.target).attr("placeholder", inputPlaceholder);
+});

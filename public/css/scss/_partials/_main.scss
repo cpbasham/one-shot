@@ -3,6 +3,7 @@ $primary-color: #ECE6C7;
 $secondary-color: #13552D;
 $modifiers-bar-height: 2em;
 $input-height: $modifiers-bar-height;
+$item-size: 46px;
 
 * {
   outline: none;
@@ -29,6 +30,7 @@ body {
 }
 
 input {
+  display: block;
   border: none;
   height: $input-height;
   width: 75%;
