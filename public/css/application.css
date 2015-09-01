@@ -261,6 +261,7 @@ div.save-div {
 
 div#footer {
   margin-top: 15px;
+  bottom: 0;
   height: 2.5em;
   text-align: center;
   width: 100%;
