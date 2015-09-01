@@ -1,22 +1,35 @@
 var itemDiv = $("div.items");
 var itemSearch = itemDiv.find("#item-search");
-var images = itemDiv.find("ul.images li span")
-itemSearch.on("input", function(e) {
-  var pattern = new RegExp(escapeRegExp(e.target.value));
-  // console.log(pattern);
+var images = itemDiv.find("ul.images li span");
+
+function searchForItem(str) {
+  images = itemDiv.find("ul.images li span");
+  var pattern = new RegExp(escapeRegExp(normalize(str)));
   images.each(function(i) {
     var image = $(images[i]);
-    if (!pattern.test(image.attr("title"))) {
+    if (nameMatch(pattern, image) || image.data("purchasable") === "false") {
       image.parent().hide();
     } else {
       image.parent().show();
     }
   });
-  // e.target.value
+}
+
+itemSearch.on("input", function(e) {
+  searchForItem(e.target.value);
 });
+
+images.draggable({helper: 'clone'});
+
+
+function nameMatch(pattern, image) {
+  return !pattern.test(normalize(image.attr("title").toLowerCase()))
+}
 
 function escapeRegExp(str) {
   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
-images.draggable({helper: 'clone'});
+function normalize(str) {
+  return str.replace(/\W|\d/gi, "");
+}

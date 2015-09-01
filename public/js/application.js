@@ -1,3 +1,4 @@
+setData = null;
 
 // CHAMPION SELECTOR MODIFIER LISTENERS
 //------------------------------------------------------

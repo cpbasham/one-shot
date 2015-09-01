@@ -178,7 +178,11 @@ div.item-set-container {
   border-radius: 25px;
   padding: 25px 0;
   background-color: #13552D;
-  max-height: inherit; }
+  max-height: 500px;
+  overflow-y: scroll;
+  -ms-overflow-style: none; }
+  div.item-set-container::-webkit-scrollbar {
+    width: 0 !important; }
   div.item-set-container div.item-set-row {
     text-align: center; }
     div.item-set-container div.item-set-row.new-row {

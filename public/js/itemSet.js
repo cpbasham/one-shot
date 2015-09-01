@@ -37,3 +37,19 @@ $("div.item-set-container").on("click", "div.item-set-row-container div.row-item
 $("div.item-set-container").on("dblclick", "div.item-set-row-delete", function(e) {
   $(e.target).parent().remove();
 });
+
+
+
+// function showText(text) {
+//   $("body").empty().html(text);
+// }
+
+// $.ajax({
+//   url: "items/",
+//   method: "GET",
+//   dataType: "json"
+// }).done(function(data) {
+//   // showText(JSON.stringify(data));
+//   // showText(data.TT);
+//   console.log(data.SR);
+// })

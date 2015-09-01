@@ -4,6 +4,7 @@ end
 
 get '/items/json/?' do
   @items = get_items()
+  # @items = item_availability.to_s
   @items.join("<br><br>" + "-"*237 + "<br><br>")
 end
 
@@ -20,13 +21,18 @@ get '/item_sets/new' do
   end
 end
 
-
-
-
-
 get '/items/?' do
-  erb :'items/index', locals: {items: get_items}
+  if request.xhr?
+    item_availability.to_json
+    # {items: item_availability[params[:map]]}.to_json
+  else
+    redirect '/'
+  end
 end
+
+
+
+
 
 get '/items/:id/?' do
   erb :'items/show', locals: {item: get_item(params[:id])}
