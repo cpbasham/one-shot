@@ -142,7 +142,7 @@ div.menu-bar.champion-select {
     color: #f9f7ed; }
 
 div.items {
-  height: 500px;
+  height: 470px;
   border-radius: 25px;
   padding: 25px 0;
   margin: 0 5%;
@@ -179,7 +179,7 @@ div.item-set-container {
   padding: 25px 0;
   background-color: #13552D; }
   div.item-set-container div.row-container {
-    max-height: 404px;
+    max-height: 374px;
     overflow-y: scroll;
     -ms-overflow-style: none; }
     div.item-set-container div.row-container::-webkit-scrollbar {
@@ -261,7 +261,7 @@ div.save-div {
 
 div#footer {
   margin-top: 20px;
-  height: 2em;
+  height: 3em;
   text-align: center;
   width: 100%;
   background-color: #13552D;

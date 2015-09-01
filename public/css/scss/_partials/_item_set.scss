@@ -6,7 +6,7 @@ div.item-set-container {
   background-color: $secondary-color;
 
   & div.row-container {
-    max-height: 404px;
+    max-height: 374px;
     overflow-y: scroll;
     &::-webkit-scrollbar { width: 0 !important }
     -ms-overflow-style: none;
