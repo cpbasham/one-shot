@@ -12,3 +12,12 @@ div.save-div {
     margin: auto;
   }
 }
+
+div#footer {
+  margin-top: 20px;
+  height: 2em;
+  text-align: center;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
